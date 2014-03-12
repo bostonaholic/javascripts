@@ -1,5 +1,5 @@
 class MixpanelMock
-  track: (eventString) ->
-    console.log("Mixpanel:", eventString)
+  track: () ->
+    console.log("mixpanel.track", arguments)
 
 window.mixpanel = new MixpanelMock()
