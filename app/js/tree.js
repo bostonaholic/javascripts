@@ -3,20 +3,9 @@ function Tree(root) {
   this.children = [];
 }
 
-var t = new Tree(0);
-
-// 0
-
 Tree.prototype.addChild = function(childTree) {
   this.children.push(childTree);
 };
-
-t.addChild(new Tree(1));
-t.addChild(new Tree(2));
-
-//   0
-//  / \
-// 1   2
 
 Tree.prototype.copy = function() {
   var copiedTree = new Tree(this.root);
@@ -25,8 +14,6 @@ Tree.prototype.copy = function() {
   });
   return copiedTree;
 };
-
-var tCopy = t.copy();
 
 Tree.prototype.equals = function(other) {
   if (this.root !== other.root) { return false; }
@@ -39,21 +26,3 @@ Tree.prototype.equals = function(other) {
   });
   return true;
 };
-
-if (tCopy.equals(t)) {
-  console.log('hooray!');
-} else {
-  console.log('booooo!');
-}
-
-t.addChild(new Tree(3));
-
-//    0
-//  / | \
-// 1  2  3
-
-if (!tCopy.equals(t)) {
-  console.log('hooray!');
-} else {
-  console.log('booooo!');
-}
