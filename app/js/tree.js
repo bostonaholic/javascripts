@@ -5,12 +5,18 @@ function Tree(root) {
 
 var t = new Tree(0);
 
+// 0
+
 Tree.prototype.addChild = function(childTree) {
   this.children.push(childTree);
 };
 
 t.addChild(new Tree(1));
 t.addChild(new Tree(2));
+
+//   0
+//  / \
+// 1   2
 
 Tree.prototype.copy = function() {
   var copiedTree = new Tree(this.root);
@@ -41,6 +47,11 @@ if (tCopy.equals(t)) {
 }
 
 t.addChild(new Tree(3));
+
+//    0
+//  / | \
+// 1  2  3
+
 if (!tCopy.equals(t)) {
   console.log('hooray!');
 } else {
