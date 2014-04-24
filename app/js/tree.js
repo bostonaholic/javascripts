@@ -20,6 +20,6 @@ Tree.prototype.equals = function(other) {
   if (this.children.length !== other.children.length) { return false; }
 
   return this.children.every(function(child, childIndex, children) {
-    return child.equals(other.children[childIndex])
+    return child.equals(other.children[childIndex]);
   });
 };
