@@ -1,13 +1,12 @@
 describe 'DoubleLinkNode', ->
+  Given -> @subject = new DoubleLinkNode('foo')
+
   describe 'constructor', ->
-    Given -> @subject = new DoubleLinkNode('foo')
     Then  -> @subject.data == 'foo'
     Then  -> @subject.previous == undefined
     Then  -> @subject.next == undefined
 
   describe '#appendToTail', ->
-    Given -> @subject = new DoubleLinkNode('foo')
-
     context 'once', ->
       When -> @subject.appendToTail('bar')
       Then -> @subject.next.data == 'bar'
